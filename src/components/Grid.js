@@ -4,7 +4,6 @@ import FloodFill from 'utils/FloodFill';
 import Instrument from 'utils/Instrument';
 import Hilbertify from 'utils/Hilbertify';
 
-
 let _points = [];
 
 class Grid extends React.Component {
@@ -190,28 +189,6 @@ class Grid extends React.Component {
     return randomPoint;
   }
 
-  // samples2d(numSamples) {
-  //   // Samples will be an array of arrays, representing the
-  //   // x and y coordinantes returned by the hilbert function
-  //   let samples = [];
-  //   let ii = 0;
-  //
-  //   //  const delta = 1.0 / numSamples;
-  //
-  //   const delta = numSamples;
-  //   for (ii; ii < 1.0; ii += delta ) {
-  //     let hilbertPair = Hilbertify(ii + Math.random() * delta, 2);
-  //
-  //     const x = Math.floor(hilbertPair[0] * this.props.columns + 1);
-  //     const y  = Math.floor(hilbertPair[1] * this.props.rows + 1);
-  //     hilbertPair[0] = x;
-  //     hilbertPair[1] = y
-  //
-  //     samples.push(hilbertPair);
-  //   }
-  //   return samples;
-  // }
-
   /**
    * Translate a 1d position in a grid to an x,y position.
    * @param  {Number}} point index in a 1d representation of the grid
@@ -256,7 +233,7 @@ Grid.defaultProps = {
   gutter: 4,
   // TODO instead of doing this, make the grid more generic and have the
   // minesweeper board inherit from this component.
-  numMines: 5
+  numMines: 90
 };
 
 export default Grid;
