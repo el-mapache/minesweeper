@@ -2,11 +2,9 @@ import React from 'react';
 import Row from 'components/Row';
 import FloodFill from 'utils/FloodFill';
 import Instrument from 'utils/Instrument';
+import Hilbertify from 'utils/Hilbertify';
 
 
-// _filledSlots will be an object with rows as keys,
-// and values of tiles with in the row.
-let _filledSlots = {};
 let _points = [];
 
 class Grid extends React.Component {
@@ -16,12 +14,10 @@ class Grid extends React.Component {
 
     // generate the board object.
     let board = this._getBoard();
-
-
     const mines = this._getMines();
 
     // perform a second pass over the board and place bombs
-    this._placeMines(board);
+    this._placeMines(board, mines);
 
     this.state = {
       board: board
@@ -93,27 +89,57 @@ class Grid extends React.Component {
   }
 
   _checkNeighbors(row, column) {
+    if (!this.props.playing) {
+      return;
+    }
+
     this.props.onTileClick();
+
+    if (this.state.board[row][column].value === 'X') {
+      let newBoard = this.state.board.slice();
+
+      // User has clicked on a mine, reveal it and end the game.
+      newBoard.forEach(function(row) {
+        row.forEach((tile) => {
+          if (tile.value === 'X') {
+            tile.revealed = true;
+          }
+        });
+      });
+
+      const newState = {board: newBoard};
+      return this.setState(newState, function() {
+        this.props.onLose();
+      });
+    }
+
     // create a copy of the board so we can mutate it freely
     let newBoard = this.state.board.slice();
-    let neighbors = [];
 
-    // the first node to check.
-    let node = newBoard[row][column];
-
-    node.revealed = true;
     // call the flood fill algorithm
     FloodFill(newBoard, row, column);
 
-    console.log(newBoard);
     this.setState({
       board: newBoard
+    }, function() {
+      // check if the player has won
+      const revealedTiles = this.state.board.reduce((memo, row) => {
+        memo = memo.concat(row.filter((tile) => {
+          return !tile.revealed;
+        }));
+        return memo;
+      }, []);
+
+      if (revealedTiles.length === this.props.numMines) {
+        return this.props.onWin();
+      }
     });
   }
 
   _getMines() {
     let numMines = this.props.numMines;
     let point = null;
+    let spaces = {};
 
     while (numMines--) {
       // _getRandomSpace returns null. As long as `point` is null we know
@@ -126,7 +152,7 @@ class Grid extends React.Component {
 
       // If we have seen this row, assign it our variable,
       // otherwise initialize it with an empty array.
-      let row = _filledSlots[coords.y] = _filledSlots[coords.y] || [];
+      let row = spaces[coords.y] = spaces[coords.y] || [];
 
 
       // Add the new mine tile to its row.
@@ -138,6 +164,8 @@ class Grid extends React.Component {
 
     // zero out the points array
     _points.length = 0;
+
+    return spaces;
   }
 
   /**
@@ -162,6 +190,28 @@ class Grid extends React.Component {
     return randomPoint;
   }
 
+  // samples2d(numSamples) {
+  //   // Samples will be an array of arrays, representing the
+  //   // x and y coordinantes returned by the hilbert function
+  //   let samples = [];
+  //   let ii = 0;
+  //
+  //   //  const delta = 1.0 / numSamples;
+  //
+  //   const delta = numSamples;
+  //   for (ii; ii < 1.0; ii += delta ) {
+  //     let hilbertPair = Hilbertify(ii + Math.random() * delta, 2);
+  //
+  //     const x = Math.floor(hilbertPair[0] * this.props.columns + 1);
+  //     const y  = Math.floor(hilbertPair[1] * this.props.rows + 1);
+  //     hilbertPair[0] = x;
+  //     hilbertPair[1] = y
+  //
+  //     samples.push(hilbertPair);
+  //   }
+  //   return samples;
+  // }
+
   /**
    * Translate a 1d position in a grid to an x,y position.
    * @param  {Number}} point index in a 1d representation of the grid
@@ -177,9 +227,9 @@ class Grid extends React.Component {
     return coords;
   }
 
-  _placeMines(board) {
-    Object.keys(_filledSlots).forEach(function(row) {
-      _filledSlots[row].forEach(function(tile) {
+  _placeMines(board, mines) {
+    Object.keys(mines).forEach(function(row) {
+      mines[row].forEach(function(tile) {
         board[row][tile].value = 'X';
       });
     });
@@ -206,7 +256,7 @@ Grid.defaultProps = {
   gutter: 4,
   // TODO instead of doing this, make the grid more generic and have the
   // minesweeper board inherit from this component.
-  numMines: 50
+  numMines: 5
 };
 
 export default Grid;

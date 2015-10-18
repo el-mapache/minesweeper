@@ -1,4 +1,5 @@
 import React from 'react';
+import MineCount from 'components/MineCount';
 
 class Tile extends React.Component {
   constructor(props) {
@@ -19,7 +20,9 @@ class Tile extends React.Component {
     return (
       <div style={this._getBackgroundColor()}
         onClick={this._handleClick}
-        className='tile' />
+        className='tile'>
+        <MineCount count={this.props.mineCount} />
+      </div>
     );
   }
 

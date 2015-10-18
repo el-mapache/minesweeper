@@ -29,8 +29,6 @@ Flood-fill (node, target-color, replacement-color):
 **/
 const FloodFill = (grid, x, y) => {
   let checked = [];
-  let pending = [];
-  let revealed = [];
 
   // is the current tile marked as a mine?
   const isMine = function(nodeValue) {
@@ -62,6 +60,7 @@ const FloodFill = (grid, x, y) => {
   const Node = function(x, y) {
     this.x = x;
     this.y = y;
+    this.mineCount = 0;
   };
 
   const inBounds = function(x,y) {
@@ -73,26 +72,33 @@ const FloodFill = (grid, x, y) => {
   }
 
   const addNeighbors = function(x, y) {
-    // return if position is out of bounds.
+    let pending = [];
+    
     if (!inBounds(x,y)) {
+      // We are trying to access a node that is out of the bounds of the grid.
       return;
     }
 
-    const valueAtPoint = grid[x][y].value;
+    const thisNode = grid[x][y];
+    // What state the current node is in. e.g. mine, safe square, or unchecked.
+    const valueAtPoint = thisNode.value;
 
     if (isMine(valueAtPoint)) {
-      grid[x][y].revealed = true;
+      // We've hit a mine, reveal it and stop the algorithm on this node path.
+      thisNode.revealed = true;
       return;
     }
 
     if (valueAtPoint === 'O') {
-      // this spot has already been revealed, skip it
+      // This spot is safe and has been revealed, end this path
       return;
     }
 
+    // Create a new minesweeper object
     let node = new Node(x, y);
 
     if (!tileIsChecked(node)) {
+      // Mark this tile as checked so we dont examine it in the future.
       checked.push(node)
     }
 
@@ -105,26 +111,33 @@ const FloodFill = (grid, x, y) => {
       new Node(x - 1, y + 1),
       new Node(x + 1, y -1),
       new Node(x + 1, y + 1)
-    ]);
+    ].filter((item) => {
+      return inBounds(item.x, item.y);
+    }));
 
-    grid[x][y].value = 'O';
+    // the current minesweeper hasn't found a mine, reveal it and mark as safe.
+    thisNode.value = 'O';
+    thisNode.revealed = true;
+
+    // Next, check to see of any of the 8 neighboring nodes are mines.
+    var hasMines = pending.filter(function(validNode) {
+      return isMine(grid[validNode.x][validNode.y].value);
+    })
+
+
+    if (hasMines.length) {
+      // The current node has mines for neighbors. Store the number and end
+      // the algorithm on this node path.
+      thisNode.mineCount = hasMines.length;
+      return;
+    }
 
     let nextNode;
 
+    // Call addNeighbors on each of the 8 neighbors to see how many more
+    // spaces we can reveal.
     while (nextNode = pending.pop()) {
-      if (!inBounds(nextNode.x, nextNode.y)) {
-        continue;
-      }
-
-      const next = grid[nextNode.x][nextNode.y];
-
-      if(!isMine(next.value)) {
-        next.value = 'O';
-        next.revealed = true;
-      }
-      //if (!addNeighbors(nextNode.x, nextNode.y)) {
-    //    break;
-    //  }
+      addNeighbors(nextNode.x, nextNode.y);
     }
   };
 

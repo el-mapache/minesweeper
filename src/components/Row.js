@@ -16,12 +16,15 @@ class Row extends React.Component {
     let index = 0;
 
     for (index; index < 30; index++) {
+      const tileData = this.props.data[index];
+
       output.push(
         <Tile key={index}
           index={index}
           handleClick={this._onTileClick}
-          value={this.props.data[index].value}
-          revealed={this.props.data[index].revealed} />
+          value={tileData.value}
+          revealed={tileData.revealed}
+          mineCount={tileData.mineCount} />
       );
     }
 
