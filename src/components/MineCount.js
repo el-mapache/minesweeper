@@ -11,9 +11,9 @@ class MineCount extends React.Component {
     }
 
     return {
-      color: this.props.count === 1 ? 'blue' :
-             this.props.count === 2 ? 'green' :
-             'red'
+      color: this.props.count === 1 ? '#8EBDFF' :
+             this.props.count === 2 ? '#C0D818' :
+             '#F00078'
     };
   }
 

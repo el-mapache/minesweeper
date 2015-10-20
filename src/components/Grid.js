@@ -80,10 +80,8 @@ class Grid extends React.Component {
     const height = `${this.props.rows * (this.props.tileSize + this.props.gutter)}`;
 
     return {
-      'width': width,
-      'border': '1px solid gray',
       'height': height,
-      'padding': '4px'
+      'width': width
     };
   }
 
@@ -214,7 +212,8 @@ class Grid extends React.Component {
 
   render() {
     return (
-      <div style={this._getContainerStyle()}>
+      <div className="ms-game-board ms-retro-border-rev"
+        style={this._getContainerStyle()}>
         {this._getRows()}
       </div>
     );
@@ -233,7 +232,7 @@ Grid.defaultProps = {
   gutter: 4,
   // TODO instead of doing this, make the grid more generic and have the
   // minesweeper board inherit from this component.
-  numMines: 90
+  numMines: 60
 };
 
 export default Grid;

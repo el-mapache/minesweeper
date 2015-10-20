@@ -41,7 +41,7 @@ class Tile extends React.Component {
     let bgColor = 'gray';
 
     if (revealed) {
-      bgColor = value === 'O' ? 'rgba(0,0,200,0.1)' : 'red';
+      bgColor = value === 'O' ? 'rgba(0,0,200,0.1)' : '#F00078';
     }
 
     return {
