@@ -14,8 +14,8 @@ export default class MinesweeperNode extends Point {
     this.nearbyMines = null;
   }
 
-  setValue(value) {
+  setValue(value, revealed = false) {
     this.value = value;
-    this.revealed = true;
+    this.revealed = revealed;
   }
 }

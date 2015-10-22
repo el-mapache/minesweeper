@@ -39,10 +39,10 @@ class Scoreboard extends React.Component {
   render() {
     return (
 			<div className="ms-retro-box ms-retro-border">
-        <div style={{display: 'flex', 'justifyContent': 'center', 'marginTop': '4px'}}>
-          <span>{this.state.hundreds}</span>
-          <span>{this.state.tens}</span>
-          <span>{this.state.ones}</span>
+        <div className="ms-retro-content">
+          <span className="ms-tech-display-glyph">{this.state.hundreds}</span>
+          <span className="ms-tech-display-glyph">{this.state.tens}</span>
+          <span className="ms-tech-display-glyph">{this.state.ones}</span>
         </div>
       </div>
     );

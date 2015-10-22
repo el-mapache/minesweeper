@@ -82,10 +82,10 @@ export default class App extends React.Component {
 			return (
 				<div>
 					<h1 className="ms-title">{message}</h1>
-					{resetButton}
 				</div>
 			);
 		}
+		//<button onClick={this._resetGame}>restart</button>
 
 		return (<h1 className="ms-title">MINESWEEPER</h1>);
 	}
