@@ -8,6 +8,8 @@ const MINES = 70;
 const ROWS = 16;
 const COLS = 30;
 
+let dirty = false;
+
 
 const hasKey = function(key) {
   return key in _state;
@@ -22,7 +24,9 @@ const getDefaultState = function() {
     gutterPx: 4,
     moves: 0,
     currentTime: 0,
-    isPlaying: true,
+    playing: true,
+    markers: 99,
+    started: false,
     won: false,
     gameId: `${+new Date}:${(Math.random() * 1000000) | 0}`,
     board: new MinesweeperBord(ROWS, COLS, MINES)
@@ -43,16 +47,12 @@ const Game = assign({}, Emitter.prototype, {
     return _state;
   },
 
-  setState(prop, value) {
+  update(prop, value) {
     if (typeof prop === 'object' && prop) {
-      let validStateKeys = Object.keys(state);
-
       for (let property in prop) {
-        if (validStateKeys.indexOf(property)) {
-          _state[property] = prop[property];
-        }
+        _state[property] = prop[property];
       }
-    } else if (stateHasKey(prop)) {
+    } else {
       _state[prop] = value;
     }
 

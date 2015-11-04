@@ -7,10 +7,6 @@ export default class App extends React.Component {
 	constructor(props) {
     super(props);
 
-		console.log(Game.getState());
-		// Could easily be passed in as props from a server
-		this.state = this._getInitialState();
-
     this._incrementMoves = this._incrementMoves.bind(this);
 		this._decrementMarkers = this._decrementMarkers.bind(this);
     this._onLose = this._onLose.bind(this);
@@ -30,7 +26,7 @@ export default class App extends React.Component {
 	}
 
 	_tick() {
-		if (!this.state.started || !this.state.playing) {
+		if (!this.props.started || !this.props.playing) {
 			return;
 		}
 
@@ -95,7 +91,7 @@ export default class App extends React.Component {
 	}
 
 	_getGameOverMessage() {
-		if (!this.state.playing) {
+		if (!this.props.playing) {
 			const resetButton = (<button onClick={this._resetGame}>restart</button>);
 			let message = this.state.won ? 'YOU WIN!' : 'YOU LOSE, LOSER.';
 
@@ -110,23 +106,28 @@ export default class App extends React.Component {
 	}
 
 	render() {
-		const time = this.state.currentTime;
+		var width = this.props.columns * (this.props.tileSizePx + this.props.gutterPx);
+		var height = this.props.rows * (this.props.tileSizePx + this.props.gutterPx)
+
 		return (
 			<div className="ms-game-container ms-retro-border">
 				<div className="ms-info-pane">
-					<Scoreboard score={this.state.markers} />
+					<Scoreboard score={this.props.markers} />
 					{this._getGameOverMessage()}
-					<Scoreboard score={time} />
+					<Scoreboard score={this.props.currentTime} />
 				</div>
 				<button className="ms-reset-btn"
-					style={{display: this.state.playing ? 'none' : 'initial'}}
+					style={{display: this.props.playing ? 'none' : 'initial'}}
 					onClick={this._resetGame}>restart</button>
-      	<Grid key={this.state.gameId}
-					playing={this.state.playing}
+      	<Grid key={this.props.gameId}
+				  width={width}
+					height={height}
+					playing={this.props.playing}
           onTileClick={this._incrementMoves}
 					onTileRightClick={this._decrementMarkers}
           onLose={this._onLose}
-					onWin={this._onWin} />
+					onWin={this._onWin}
+					board={this.props.board} />
 			</div>
 		);
 	}
