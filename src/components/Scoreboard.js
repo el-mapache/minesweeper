@@ -4,10 +4,12 @@ class Scoreboard extends React.Component {
   constructor(props) {
     super(props);
 
+    const digits = this._padLeft(props.score).split('');
+
     this.state = {
-      hundreds: 0,
-      tens: 0,
-      ones: 0
+      hundreds: digits[0],
+      tens: digits[1],
+      ones: digits[2]
     };
   }
 
@@ -26,14 +28,14 @@ class Scoreboard extends React.Component {
     return output;
   }
 
-  componentWillReceiveProps() {
-    const digits = this._padLeft(this.props.score).split('');
-
+  componentWillReceiveProps(nextProps) {
+    const digits = this._padLeft(nextProps.score).split('');
+    console.log('receiveing', digits);
     this.setState({
       hundreds: digits[0],
       tens: digits[1],
       ones: digits[2]
-    })
+    });
   }
 
   render() {

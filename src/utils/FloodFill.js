@@ -93,9 +93,14 @@ const FloodFill = (grid, x, y) => {
       return inBounds(item.x, item.y);
     }));
 
-    // the current minesweeper hasn't found a mine, reveal it and mark as safe.
-    thisNode.value = 'O';
-    thisNode.revealed = true;
+    // If the current node being examined has been marked, we can reveal keep
+    // checking its node path. However, we shouldn't toggle it to revealed,
+    // and we shouldn't let the player know how many mines are around it.
+    if (!thisNode.flagged) {
+      // the current minesweeper hasn't found a mine, reveal it and mark as safe.
+      thisNode.value = 'O';
+      thisNode.revealed = true;
+    }
 
     // Next, check to see of any of the 8 neighboring nodes are mines.
     var hasMines = neighbors.filter(function(neighbor) {
@@ -106,7 +111,10 @@ const FloodFill = (grid, x, y) => {
     if (hasMines.length) {
       // The current node has mines for neighbors. Store the number and end
       // the algorithm on this node path.
-      thisNode.mineCount = hasMines.length;
+      if (!thisNode.flagged) {
+        thisNode.mineCount = hasMines.length;
+      }
+
       return;
     }
 

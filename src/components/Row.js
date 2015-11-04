@@ -22,9 +22,11 @@ class Row extends React.Component {
         <Tile key={index}
           index={index}
           handleClick={this._onTileClick}
+          handleRightClick={this.props.onRightClick.bind(null, this.props.index)}
           value={tileData.value}
           revealed={tileData.revealed}
-          mineCount={tileData.mineCount} />
+          mineCount={tileData.mineCount}
+          flagged={tileData.flagged} />
       );
     }
 

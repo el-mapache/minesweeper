@@ -1,15 +1,15 @@
 import React from 'react';
 import Row from 'components/Row';
 import FloodFill from 'utils/FloodFill';
-import Instrument from 'utils/Instrument';
-import Hilbertify from 'utils/Hilbertify';
 
 let _points = [];
 
 class Grid extends React.Component {
   constructor(props) {
     super(props);
+
     this._checkNeighbors = this._checkNeighbors.bind(this);
+    this._placeMarker = this._placeMarker.bind(this);
 
     // generate the board object.
     let board = this._getBoard();
@@ -41,7 +41,8 @@ class Grid extends React.Component {
       while((column = column + 1) < columns) {
         board[row][column] = {
           value: null,
-          revealed: false
+          revealed: false,
+          flagged: false
         };
       }
 
@@ -66,7 +67,8 @@ class Grid extends React.Component {
           data={_this.state.board[row]}
           ref={ref}
           index={row}
-          onTileClick={_this._checkNeighbors} />
+          onTileClick={_this._checkNeighbors}
+          onRightClick={this._placeMarker} />
       );
     }
 
@@ -173,7 +175,7 @@ class Grid extends React.Component {
    */
   _getRandomSpace() {
     // Add one to make our random number generator inclusive.
-    const gridSize = (this.props.rows * this.props.columns) + 1;
+    const gridSize = (this.props.rows * this.props.columns);
     const randomPoint = (Math.random() * gridSize) | 0;
 
     if (~_points.indexOf(randomPoint)) {
@@ -210,6 +212,19 @@ class Grid extends React.Component {
     });
   }
 
+  _placeMarker(column, row, event) {
+    event.preventDefault();
+
+    this.props.onTileRightClick();
+
+    let board = this.state.board;
+    board[column][row].flagged = true;
+
+    this.setState({
+      board: board
+    });
+  }
+
   render() {
     return (
       <div className="ms-game-board ms-retro-border-rev"
@@ -222,7 +237,9 @@ class Grid extends React.Component {
 
 Grid.propTypes = {
   rows: React.PropTypes.number,
-  columns: React.PropTypes.number
+  columns: React.PropTypes.number,
+  onTileClick: React.PropTypes.func,
+  onTileRightClick: React.PropTypes.func
 };
 
 Grid.defaultProps = {
@@ -232,7 +249,7 @@ Grid.defaultProps = {
   gutter: 4,
   // TODO instead of doing this, make the grid more generic and have the
   // minesweeper board inherit from this component.
-  numMines: 60
+  numMines: 70
 };
 
 export default Grid;

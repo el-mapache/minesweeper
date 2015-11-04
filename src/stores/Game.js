@@ -20,7 +20,8 @@ const getDefaultState = function() {
     currentTime: 0,
     isPlaying: true,
     won: false,
-    gameId: `${+new Date}:${(Math.random() * 1000000) | 0}`
+    gameId: `${+new Date}:${(Math.random() * 1000000) | 0}`,
+    board: new MinesweeperBord(_state.rows, _state.columns, _state.mines)
   };
 
   return state;
@@ -30,14 +31,6 @@ let _state = getDefaultState();
 let board;
 
 const Game = assign({}, Emitter.prototype, {
-  generate() {
-    board = new MinesweeperBord(_state.rows, _state.columns, _state.mines);
-  },
-
-  getBoard() {
-    return board;
-  },
-
   getState() {
     return _state;
   },
