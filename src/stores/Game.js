@@ -4,6 +4,10 @@ import MinesweeperBord from 'utils/MinesweeperBoard';
 
 const Emitter = Events.EventEmitter;
 const CHANGE_EVENT = 'change';
+const MINES = 70;
+const ROWS = 16;
+const COLS = 30;
+
 
 const hasKey = function(key) {
   return key in _state;
@@ -11,9 +15,9 @@ const hasKey = function(key) {
 
 const getDefaultState = function() {
   const state = {
-    rows: 16,
-    columns: 30,
-    mines: 68,
+    rows: ROWS,
+    columns: COLS,
+    mines: MINES,
     tileSizePx: 20,
     gutterPx: 4,
     moves: 0,
@@ -21,7 +25,7 @@ const getDefaultState = function() {
     isPlaying: true,
     won: false,
     gameId: `${+new Date}:${(Math.random() * 1000000) | 0}`,
-    board: new MinesweeperBord(_state.rows, _state.columns, _state.mines)
+    board: new MinesweeperBord(ROWS, COLS, MINES)
   };
 
   return state;
@@ -31,6 +35,10 @@ let _state = getDefaultState();
 let board;
 
 const Game = assign({}, Emitter.prototype, {
+  populate(options) {
+
+  },
+
   getState() {
     return _state;
   },

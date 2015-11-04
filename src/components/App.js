@@ -1,4 +1,5 @@
 import React from 'react';
+import Game from 'stores/Game';
 import Grid from 'components/Grid';
 import Scoreboard from 'components/Scoreboard';
 
@@ -6,6 +7,7 @@ export default class App extends React.Component {
 	constructor(props) {
     super(props);
 
+		console.log(Game.getState());
 		// Could easily be passed in as props from a server
 		this.state = this._getInitialState();
 
