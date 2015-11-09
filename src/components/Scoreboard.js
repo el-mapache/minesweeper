@@ -13,8 +13,7 @@ class Scoreboard extends React.Component {
     };
   }
 
-  _padLeft() {
-    const score = this.props.score;
+  _padLeft(score) {
     let output;
 
     if (score < 10) {
@@ -30,7 +29,7 @@ class Scoreboard extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const digits = this._padLeft(nextProps.score).split('');
-    console.log('receiveing', digits);
+
     this.setState({
       hundreds: digits[0],
       tens: digits[1],
