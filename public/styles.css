@@ -1,0 +1,138 @@
+body {
+  background: #3a3a3a;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+h1 {
+  font-size: 31px;
+  margin: 0px;
+}
+
+.ms-game-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  padding: 25px;
+  width: 730px;
+}
+
+.ms-info-pane {
+  border-bottom: 2px solid #eaeaea;
+  border-right: 2px solid #eaeaea;
+  border-top: 2px solid #222;
+  border-left: 2px solid #222;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 5px;
+  padding: 12px;
+  width: 712px;
+}
+
+.ms-title {
+  font-family: 'Permanent Marker', cursive;
+  margin-top: 2px;
+  background-image: -webkit-linear-gradient(#FF0FF8 0%, #F9F9F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-filter: drop-shadow(2px 2px 23px #f008b7);
+  transform: skew(-26deg, -9deg);
+}
+
+.ms-game-board {
+  padding: 8px;
+}
+
+.grid-row {
+  width: inherit;
+  height: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.tile {
+  float: left;
+  height: 10px;
+  margin: 2px;
+  padding: 5px;
+  width: 10px;
+  outline: 1px solid rgba(194, 197, 188, 0.1);
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+
+  align-items: center;
+}
+
+.ms-retro-box {
+  background: #4a4a4a;
+  color: #F00078;
+  font-family: 'digital_dreamregular';
+  font-size: 28px;
+  height: 30px;
+  padding: 10px 0px 5px 15px;
+  width: 80px;
+}
+
+.ms-retro-box.ms-retro-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.ms-tech-display {
+  position: relative;
+  letter-spacing: 4px;
+}
+
+.ms-tech-display-glyph {
+  position: relative;
+}
+
+.ms-tech-display-glyph:after {
+  content: '@';
+  opacity: 0.3;
+  color: #761619;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ms-retro-border {
+  border-top: 4px solid #F0F000;
+  border-left: 4px solid #F0F000;
+  border-bottom: 4px solid #222;
+  border-right: 4px solid #222;
+}
+
+.ms-retro-border-rev {
+  border-bottom: 2px solid #eaeaea;
+  border-right: 2px solid #eaeaea;
+  border-top: 2px solid #222;
+  border-left: 2px solid #222;
+}
+
+.ms-reset-btn {
+  justify-content: center;
+  border-radius: none;
+  height: 30px;
+  outline: 0;
+  border: none;
+  margin-top: 5px;
+  font-size: 19px;
+  margin-bottom: 10px;
+  border-bottom: 3px solid black;
+  background: #3838CF;
+  color: white;
+  cursor: pointer;
+}
