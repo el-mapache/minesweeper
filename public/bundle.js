@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "52d5db3c52df90d229dc"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "694c95cd6805965b6c31"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -7987,52 +7987,27 @@
 	
 	'use strict';
 	
-	Object.defineProperty(exports, '__esModule', {
-		value: true
-	});
-	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var _react = __webpack_require__(123);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _componentsGrid = __webpack_require__(225);
+	var _storesGame = __webpack_require__(225);
 	
-	var _componentsGrid2 = _interopRequireDefault(_componentsGrid);
+	var _storesGame2 = _interopRequireDefault(_storesGame);
 	
-	var App = (function (_React$Component) {
-		_inherits(App, _React$Component);
+	var _componentsApp = __webpack_require__(233);
 	
-		function App() {
-			_classCallCheck(this, App);
+	var _componentsApp2 = _interopRequireDefault(_componentsApp);
 	
-			_get(Object.getPrototypeOf(App.prototype), 'constructor', this).apply(this, arguments);
-		}
+	//Game.generate();
 	
-		_createClass(App, [{
-			key: 'render',
-			value: function render() {
-				return _react2['default'].createElement(_componentsGrid2['default'], null);
-			}
-		}]);
+	//console.log(Game.getState(), Game.getBoard());
 	
-		return App;
-	})(_react2['default'].Component);
+	_react2['default'].render(_react2['default'].createElement(_componentsApp2['default'], null), document.getElementById('app'));
 	
-	exports.App = App;
-	
-	_react2['default'].render(_react2['default'].createElement(App, null), document.getElementById('app'));
-	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(228); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(230); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
 
 /***/ },
@@ -28792,149 +28767,525 @@
 	  value: true
 	});
 	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	var _objectAssign = __webpack_require__(226);
+	
+	var _objectAssign2 = _interopRequireDefault(_objectAssign);
+	
+	var _events = __webpack_require__(227);
+	
+	var _events2 = _interopRequireDefault(_events);
+	
+	var _utilsMinesweeperBoard = __webpack_require__(228);
+	
+	var _utilsMinesweeperBoard2 = _interopRequireDefault(_utilsMinesweeperBoard);
+	
+	var Emitter = _events2['default'].EventEmitter;
+	var CHANGE_EVENT = 'change';
+	var MINES = 70;
+	var ROWS = 16;
+	var COLS = 30;
+	
+	var hasKey = function hasKey(key) {
+	  return key in _state;
+	};
+	
+	var getDefaultState = function getDefaultState() {
+	  var state = {
+	    rows: ROWS,
+	    columns: COLS,
+	    mines: MINES,
+	    tileSizePx: 20,
+	    gutterPx: 4,
+	    moves: 0,
+	    currentTime: 0,
+	    isPlaying: true,
+	    won: false,
+	    gameId: +new Date() + ':' + (Math.random() * 1000000 | 0),
+	    board: new _utilsMinesweeperBoard2['default'](ROWS, COLS, MINES)
+	  };
+	
+	  return state;
+	};
+	
+	var _state = getDefaultState();
+	var board = undefined;
+	
+	var Game = (0, _objectAssign2['default'])({}, Emitter.prototype, {
+	  populate: function populate(options) {},
+	
+	  getState: function getState() {
+	    return _state;
+	  },
+	
+	  setState: function setState(prop, value) {
+	    if (typeof prop === 'object' && prop) {
+	      var validStateKeys = Object.keys(state);
+	
+	      for (var property in prop) {
+	        if (validStateKeys.indexOf(property)) {
+	          _state[property] = prop[property];
+	        }
+	      }
+	    } else if (stateHasKey(prop)) {
+	      _state[prop] = value;
+	    }
+	
+	    Game.emit(GAME.CHANGE_EVENT);
+	  }
+	});
+	
+	Object.defineProperty(Game, 'CHANGE_EVENT', {
+	  enumerable: true,
+	  writable: false,
+	  value: 'change'
+	});
+	
+	exports['default'] = Game;
+	module.exports = exports['default'];
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(230); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Game.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
+
+/***/ },
+/* 226 */
+/***/ function(module, exports) {
+
+	/* eslint-disable no-unused-vars */
+	'use strict';
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+	var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+	
+	function toObject(val) {
+		if (val === null || val === undefined) {
+			throw new TypeError('Object.assign cannot be called with null or undefined');
+		}
+	
+		return Object(val);
+	}
+	
+	module.exports = Object.assign || function (target, source) {
+		var from;
+		var to = toObject(target);
+		var symbols;
+	
+		for (var s = 1; s < arguments.length; s++) {
+			from = Object(arguments[s]);
+	
+			for (var key in from) {
+				if (hasOwnProperty.call(from, key)) {
+					to[key] = from[key];
+				}
+			}
+	
+			if (Object.getOwnPropertySymbols) {
+				symbols = Object.getOwnPropertySymbols(from);
+				for (var i = 0; i < symbols.length; i++) {
+					if (propIsEnumerable.call(from, symbols[i])) {
+						to[symbols[i]] = from[symbols[i]];
+					}
+				}
+			}
+		}
+	
+		return to;
+	};
+
+
+/***/ },
+/* 227 */
+/***/ function(module, exports) {
+
+	// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+	
+	function EventEmitter() {
+	  this._events = this._events || {};
+	  this._maxListeners = this._maxListeners || undefined;
+	}
+	module.exports = EventEmitter;
+	
+	// Backwards-compat with node 0.10.x
+	EventEmitter.EventEmitter = EventEmitter;
+	
+	EventEmitter.prototype._events = undefined;
+	EventEmitter.prototype._maxListeners = undefined;
+	
+	// By default EventEmitters will print a warning if more than 10 listeners are
+	// added to it. This is a useful default which helps finding memory leaks.
+	EventEmitter.defaultMaxListeners = 10;
+	
+	// Obviously not all Emitters should be limited to 10. This function allows
+	// that to be increased. Set to zero for unlimited.
+	EventEmitter.prototype.setMaxListeners = function(n) {
+	  if (!isNumber(n) || n < 0 || isNaN(n))
+	    throw TypeError('n must be a positive number');
+	  this._maxListeners = n;
+	  return this;
+	};
+	
+	EventEmitter.prototype.emit = function(type) {
+	  var er, handler, len, args, i, listeners;
+	
+	  if (!this._events)
+	    this._events = {};
+	
+	  // If there is no 'error' event listener then throw.
+	  if (type === 'error') {
+	    if (!this._events.error ||
+	        (isObject(this._events.error) && !this._events.error.length)) {
+	      er = arguments[1];
+	      if (er instanceof Error) {
+	        throw er; // Unhandled 'error' event
+	      }
+	      throw TypeError('Uncaught, unspecified "error" event.');
+	    }
+	  }
+	
+	  handler = this._events[type];
+	
+	  if (isUndefined(handler))
+	    return false;
+	
+	  if (isFunction(handler)) {
+	    switch (arguments.length) {
+	      // fast cases
+	      case 1:
+	        handler.call(this);
+	        break;
+	      case 2:
+	        handler.call(this, arguments[1]);
+	        break;
+	      case 3:
+	        handler.call(this, arguments[1], arguments[2]);
+	        break;
+	      // slower
+	      default:
+	        len = arguments.length;
+	        args = new Array(len - 1);
+	        for (i = 1; i < len; i++)
+	          args[i - 1] = arguments[i];
+	        handler.apply(this, args);
+	    }
+	  } else if (isObject(handler)) {
+	    len = arguments.length;
+	    args = new Array(len - 1);
+	    for (i = 1; i < len; i++)
+	      args[i - 1] = arguments[i];
+	
+	    listeners = handler.slice();
+	    len = listeners.length;
+	    for (i = 0; i < len; i++)
+	      listeners[i].apply(this, args);
+	  }
+	
+	  return true;
+	};
+	
+	EventEmitter.prototype.addListener = function(type, listener) {
+	  var m;
+	
+	  if (!isFunction(listener))
+	    throw TypeError('listener must be a function');
+	
+	  if (!this._events)
+	    this._events = {};
+	
+	  // To avoid recursion in the case that type === "newListener"! Before
+	  // adding it to the listeners, first emit "newListener".
+	  if (this._events.newListener)
+	    this.emit('newListener', type,
+	              isFunction(listener.listener) ?
+	              listener.listener : listener);
+	
+	  if (!this._events[type])
+	    // Optimize the case of one listener. Don't need the extra array object.
+	    this._events[type] = listener;
+	  else if (isObject(this._events[type]))
+	    // If we've already got an array, just append.
+	    this._events[type].push(listener);
+	  else
+	    // Adding the second element, need to change to array.
+	    this._events[type] = [this._events[type], listener];
+	
+	  // Check for listener leak
+	  if (isObject(this._events[type]) && !this._events[type].warned) {
+	    var m;
+	    if (!isUndefined(this._maxListeners)) {
+	      m = this._maxListeners;
+	    } else {
+	      m = EventEmitter.defaultMaxListeners;
+	    }
+	
+	    if (m && m > 0 && this._events[type].length > m) {
+	      this._events[type].warned = true;
+	      console.error('(node) warning: possible EventEmitter memory ' +
+	                    'leak detected. %d listeners added. ' +
+	                    'Use emitter.setMaxListeners() to increase limit.',
+	                    this._events[type].length);
+	      if (typeof console.trace === 'function') {
+	        // not supported in IE 10
+	        console.trace();
+	      }
+	    }
+	  }
+	
+	  return this;
+	};
+	
+	EventEmitter.prototype.on = EventEmitter.prototype.addListener;
+	
+	EventEmitter.prototype.once = function(type, listener) {
+	  if (!isFunction(listener))
+	    throw TypeError('listener must be a function');
+	
+	  var fired = false;
+	
+	  function g() {
+	    this.removeListener(type, g);
+	
+	    if (!fired) {
+	      fired = true;
+	      listener.apply(this, arguments);
+	    }
+	  }
+	
+	  g.listener = listener;
+	  this.on(type, g);
+	
+	  return this;
+	};
+	
+	// emits a 'removeListener' event iff the listener was removed
+	EventEmitter.prototype.removeListener = function(type, listener) {
+	  var list, position, length, i;
+	
+	  if (!isFunction(listener))
+	    throw TypeError('listener must be a function');
+	
+	  if (!this._events || !this._events[type])
+	    return this;
+	
+	  list = this._events[type];
+	  length = list.length;
+	  position = -1;
+	
+	  if (list === listener ||
+	      (isFunction(list.listener) && list.listener === listener)) {
+	    delete this._events[type];
+	    if (this._events.removeListener)
+	      this.emit('removeListener', type, listener);
+	
+	  } else if (isObject(list)) {
+	    for (i = length; i-- > 0;) {
+	      if (list[i] === listener ||
+	          (list[i].listener && list[i].listener === listener)) {
+	        position = i;
+	        break;
+	      }
+	    }
+	
+	    if (position < 0)
+	      return this;
+	
+	    if (list.length === 1) {
+	      list.length = 0;
+	      delete this._events[type];
+	    } else {
+	      list.splice(position, 1);
+	    }
+	
+	    if (this._events.removeListener)
+	      this.emit('removeListener', type, listener);
+	  }
+	
+	  return this;
+	};
+	
+	EventEmitter.prototype.removeAllListeners = function(type) {
+	  var key, listeners;
+	
+	  if (!this._events)
+	    return this;
+	
+	  // not listening for removeListener, no need to emit
+	  if (!this._events.removeListener) {
+	    if (arguments.length === 0)
+	      this._events = {};
+	    else if (this._events[type])
+	      delete this._events[type];
+	    return this;
+	  }
+	
+	  // emit removeListener for all listeners on all events
+	  if (arguments.length === 0) {
+	    for (key in this._events) {
+	      if (key === 'removeListener') continue;
+	      this.removeAllListeners(key);
+	    }
+	    this.removeAllListeners('removeListener');
+	    this._events = {};
+	    return this;
+	  }
+	
+	  listeners = this._events[type];
+	
+	  if (isFunction(listeners)) {
+	    this.removeListener(type, listeners);
+	  } else {
+	    // LIFO order
+	    while (listeners.length)
+	      this.removeListener(type, listeners[listeners.length - 1]);
+	  }
+	  delete this._events[type];
+	
+	  return this;
+	};
+	
+	EventEmitter.prototype.listeners = function(type) {
+	  var ret;
+	  if (!this._events || !this._events[type])
+	    ret = [];
+	  else if (isFunction(this._events[type]))
+	    ret = [this._events[type]];
+	  else
+	    ret = this._events[type].slice();
+	  return ret;
+	};
+	
+	EventEmitter.listenerCount = function(emitter, type) {
+	  var ret;
+	  if (!emitter._events || !emitter._events[type])
+	    ret = 0;
+	  else if (isFunction(emitter._events[type]))
+	    ret = 1;
+	  else
+	    ret = emitter._events[type].length;
+	  return ret;
+	};
+	
+	function isFunction(arg) {
+	  return typeof arg === 'function';
+	}
+	
+	function isNumber(arg) {
+	  return typeof arg === 'number';
+	}
+	
+	function isObject(arg) {
+	  return typeof arg === 'object' && arg !== null;
+	}
+	
+	function isUndefined(arg) {
+	  return arg === void 0;
+	}
+
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(59), RootInstanceProvider = __webpack_require__(67), ReactMount = __webpack_require__(69), React = __webpack_require__(123); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	var _utilsMinesweeperNode = __webpack_require__(229);
 	
-	var _react = __webpack_require__(123);
+	var _utilsMinesweeperNode2 = _interopRequireDefault(_utilsMinesweeperNode);
 	
-	var _react2 = _interopRequireDefault(_react);
+	var MinesweeperBoard = (function () {
+	  function MinesweeperBoard(rows, columns, mines) {
+	    _classCallCheck(this, MinesweeperBoard);
 	
-	var _componentsRow = __webpack_require__(226);
-	
-	var _componentsRow2 = _interopRequireDefault(_componentsRow);
-	
-	var _utilsFloodFill = __webpack_require__(231);
-	
-	var _utilsFloodFill2 = _interopRequireDefault(_utilsFloodFill);
-	
-	// _filledSlots will be an object with rows as keys,
-	// and values of tiles with in the row.
-	var _filledSlots = {};
-	var _points = [];
-	
-	var Grid = (function (_React$Component) {
-	  _inherits(Grid, _React$Component);
-	
-	  function Grid(props) {
-	    _classCallCheck(this, Grid);
-	
-	    _get(Object.getPrototypeOf(Grid.prototype), 'constructor', this).call(this, props);
-	    this._checkNeighbors = this._checkNeighbors.bind(this);
+	    this.rows = rows;
+	    this.columns = columns;
+	    this.mines = mines;
+	    this.size = this.rows * this.columns + 1;
 	
 	    var board = this._getBoard();
-	    var mines = this._getMines();
+	    this._placeMines(board, this._getMines());
 	
-	    // perform a second pass over the board and place bombs
-	    this._placeMines(board);
-	    this.state = {
-	      board: board
-	    };
+	    this.board = board;
 	  }
 	
-	  _createClass(Grid, [{
+	  /**
+	   * Creates grid from the row and column props.
+	   * @returns {Array} board
+	  **/
+	
+	  _createClass(MinesweeperBoard, [{
 	    key: '_getBoard',
 	    value: function _getBoard() {
 	      var row = -1;
 	      var column = -1;
 	      var board = [];
 	
-	      while ((row = row + 1) < this.props.rows) {
+	      while ((row = row + 1) < this.rows) {
 	        board[row] = [];
 	
-	        while ((column = column + 1) < this.props.columns) {
-	          board[row][column] = null;
+	        while ((column = column + 1) < this.columns) {
+	          board[row][column] = new _utilsMinesweeperNode2['default']();
 	        }
 	
+	        // reset the column counter
 	        column = -1;
 	      }
 	
 	      return board;
 	    }
 	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2['default'].createElement(
-	        'div',
-	        { style: this._getContainerStyle() },
-	        this._getRows()
-	      );
-	    }
-	  }, {
-	    key: '_getRows',
-	    value: function _getRows() {
-	      var _this = this;
-	
-	      var row = 0;
-	      var output = [];
-	
-	      for (row; row < this.props.rows; row++) {
-	        var ref = 'Row' + row;
-	
-	        output.push(_react2['default'].createElement(_componentsRow2['default'], { key: row,
-	          data: _this.state.board[row],
-	          ref: ref,
-	          index: row,
-	          onTileClick: _this._checkNeighbors }));
-	      }
-	
-	      return output;
-	    }
-	  }, {
-	    key: '_getContainerStyle',
-	    value: function _getContainerStyle() {
-	      var width = this.props.columns * (this.props.tileSize + this.props.gutter) + 'px';
-	
-	      var height = '' + this.props.rows * (this.props.tileSize + this.props.gutter);
-	
-	      return {
-	        'width': width,
-	        'border': '1px solid gray',
-	        'height': height,
-	        'padding': '4px'
-	      };
-	    }
-	  }, {
-	    key: '_checkNeighbors',
-	    value: function _checkNeighbors(row, column) {
-	      // create a copy of the board so we can mutate it freely
-	      var newBoard = this.state.board.slice();
-	      var neighbors = [];
-	
-	      // the first node to check.
-	      var node = newBoard[row][column];
-	
-	      // call the flood fill algorithm
-	      (0, _utilsFloodFill2['default'])(newBoard, row, column);
-	
-	      this.setState({
-	        board: newBoard
-	      });
-	    }
-	  }, {
 	    key: '_getMines',
 	    value: function _getMines() {
+	      var numMines = this.mines;
 	      var point = null;
-	      var iterator = -1;
+	      var points = [];
+	      var spaces = {};
 	
-	      while ((iterator = iterator + 1) < this.props.numMines) {
+	      if (numMines > this.size - 1) {
+	        throw new Error('Number of mines exceeds the size of the board.');
+	      }
+	
+	      while (numMines--) {
 	        // _getRandomSpace returns null. As long as `point` is null we know
 	        // a unique random tile hasn't been found.
 	        while (point === null) {
-	          point = this._getRandomSpace();
+	          point = this._getRandomSpace(points);
 	        }
 	
 	        var coords = this._getCoordsFromPoint(point);
 	
-	        // if we already have a slot in the object for this row, assign it
-	        // to row, otherwise initialize it with an emty array.
-	        var row = _filledSlots[coords.y] = _filledSlots[coords.y] || [];
+	        // If we have seen this row, assign it our variable,
+	        // otherwise initialize it with an empty array.
+	        var row = spaces[coords.y] = spaces[coords.y] || [];
 	
 	        // Add the new mine tile to its row.
 	        row.push(coords.x);
@@ -28943,27 +29294,43 @@
 	        point = null;
 	      }
 	
-	      _points.length = 0;
+	      // zero out the points array
+	      points.length = 0;
+	
+	      return spaces;
 	    }
+	
+	    /**
+	     * Get a point in the grid using a pseudorandom number. If the algorithm
+	     * has grabbed this point before, return null, otherwise, return the position
+	     * of the tile in the grid as an index of a 1d array.
+	     * @return {Number|null} Null or the 1d index of the point in the grid.
+	     */
 	  }, {
 	    key: '_getRandomSpace',
-	    value: function _getRandomSpace() {
-	      // Add one to make our random number generator inclusive.
-	      var gridSize = this.props.rows * this.props.columns + 1;
-	      var randomPoint = Math.random() * gridSize | 0;
+	    value: function _getRandomSpace(points) {
+	      var randomPoint = Math.random() * this.size | 0;
 	
-	      if (~_points.indexOf(randomPoint)) {
+	      if (~points.indexOf(randomPoint)) {
+	        // This point in the grid has already been assigned a value.
 	        return null;
 	      }
 	
-	      _points.push(randomPoint);
+	      // Add the point to our list of used points.
+	      points.push(randomPoint);
 	
 	      return randomPoint;
 	    }
+	
+	    /**
+	     * Translate a 1d position in a grid to an x,y position.
+	     * @param  {Number}} point index in a 1d representation of the grid
+	     * @return {Object}        X/Y coordinate pair.
+	     */
 	  }, {
 	    key: '_getCoordsFromPoint',
 	    value: function _getCoordsFromPoint(point) {
-	      var columns = this.props.columns;
+	      var columns = this.columns;
 	      var coords = {};
 	
 	      coords.x = point % columns;
@@ -28973,242 +29340,91 @@
 	    }
 	  }, {
 	    key: '_placeMines',
-	    value: function _placeMines(board) {
-	      Object.keys(_filledSlots).forEach(function (row) {
-	        _filledSlots[row].forEach(function (tile) {
-	          board[row][tile] = 'X';
+	    value: function _placeMines(board, mines) {
+	      Object.keys(mines).forEach(function (row) {
+	        mines[row].forEach(function (tile) {
+	          board[row][tile].setValue('X');
 	        });
 	      });
 	    }
 	  }]);
 	
-	  return Grid;
-	})(_react2['default'].Component);
+	  return MinesweeperBoard;
+	})();
 	
-	Grid.propTypes = {
-	  rows: _react2['default'].PropTypes.number,
-	  columns: _react2['default'].PropTypes.number
-	};
-	
-	Grid.defaultProps = {
-	  rows: 16,
-	  columns: 30,
-	  tileSize: 20,
-	  gutter: 4,
-	  // TODO instead of doing this, make the grid more generic and have the
-	  // minesweeper board inherit from this component.
-	  numMines: 50
-	};
-	
-	exports['default'] = Grid;
+	exports['default'] = MinesweeperBoard;
 	module.exports = exports['default'];
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(228); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Grid.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(230); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "MinesweeperBoard.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
 
 /***/ },
-/* 226 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(59), RootInstanceProvider = __webpack_require__(67), ReactMount = __webpack_require__(69), React = __webpack_require__(123); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 	
-	'use strict';
+	"use strict";
 	
-	Object.defineProperty(exports, '__esModule', {
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 	
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	var _get = function get(_x2, _x3, _x4) { var _again = true; _function: while (_again) { var object = _x2, property = _x3, receiver = _x4; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x2 = parent; _x3 = property; _x4 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	var Point = function Point(x, y) {
+	  _classCallCheck(this, Point);
 	
-	var _react = __webpack_require__(123);
+	  this.x = x;
+	  this.y = y;
+	};
 	
-	var _react2 = _interopRequireDefault(_react);
+	var MinesweeperNode = (function (_Point) {
+	  _inherits(MinesweeperNode, _Point);
 	
-	var _Tile = __webpack_require__(227);
+	  function MinesweeperNode(x, y) {
+	    _classCallCheck(this, MinesweeperNode);
 	
-	var _Tile2 = _interopRequireDefault(_Tile);
+	    _get(Object.getPrototypeOf(MinesweeperNode.prototype), "constructor", this).call(this, x, y);
 	
-	var Row = (function (_React$Component) {
-	  _inherits(Row, _React$Component);
-	
-	  function Row(props) {
-	    _classCallCheck(this, Row);
-	
-	    _get(Object.getPrototypeOf(Row.prototype), 'constructor', this).call(this, props);
-	    this._onTileClick = this._onTileClick.bind(this);
+	    this.value = null;
+	    this.revealed = null;
+	    this.nearbyMines = null;
 	  }
 	
-	  _createClass(Row, [{
-	    key: 'render',
-	    value: function render() {
-	      var output = [];
-	      var index = 0;
+	  _createClass(MinesweeperNode, [{
+	    key: "setValue",
+	    value: function setValue(value) {
+	      var revealed = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
 	
-	      for (index; index < 30; index++) {
-	        output.push(_react2['default'].createElement(_Tile2['default'], { key: index,
-	          index: index,
-	          handleClick: this._onTileClick,
-	          value: this.props.data[index] }));
-	      }
-	
-	      return _react2['default'].createElement(
-	        'div',
-	        { style: this._getRowStyle() },
-	        output
-	      );
-	    }
-	  }, {
-	    key: '_onTileClick',
-	    value: function _onTileClick(tileIndex) {
-	      this.props.onTileClick(this.props.index, tileIndex);
-	    }
-	  }, {
-	    key: '_getRowStyle',
-	    value: function _getRowStyle() {
-	      return {
-	        'width': 'inherit',
-	        'height': '20px',
-	        'marginTop': '2px',
-	        'marginBottom': '2px'
-	      };
+	      this.value = value;
+	      this.revealed = revealed;
 	    }
 	  }]);
 	
-	  return Row;
-	})(_react2['default'].Component);
+	  return MinesweeperNode;
+	})(Point);
 	
-	Row.propTypes = {
-	  // callback function to be passed down to each tile.
-	  onTileClick: _react2['default'].PropTypes.func.isRequired
-	};
-	
-	exports['default'] = Row;
-	module.exports = exports['default'];
+	exports["default"] = MinesweeperNode;
+	module.exports = exports["default"];
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(228); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Row.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(230); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "MinesweeperNode.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
 
 /***/ },
-/* 227 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(59), RootInstanceProvider = __webpack_require__(67), ReactMount = __webpack_require__(69), React = __webpack_require__(123); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var _react = __webpack_require__(123);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var Tile = (function (_React$Component) {
-	  _inherits(Tile, _React$Component);
-	
-	  function Tile(props) {
-	    _classCallCheck(this, Tile);
-	
-	    _get(Object.getPrototypeOf(Tile.prototype), 'constructor', this).call(this, props);
-	
-	    this.state = {
-	      revealed: false
-	    };
-	
-	    this._handleClick = this._handleClick.bind(this);
-	  }
-	
-	  _createClass(Tile, [{
-	    key: 'shouldComponentUpdate',
-	    value: function shouldComponentUpdate(newProps, newState) {
-	      if (newProps.value !== this.props.value || newState.revealed !== this.state.revealed) {
-	        return true;
-	      }
-	
-	      return false;
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2['default'].createElement('div', { style: this._getStyles(), onClick: this._handleClick });
-	    }
-	  }, {
-	    key: '_handleClick',
-	    value: function _handleClick() {
-	      if (this.state.revealed) {
-	        return;
-	      }
-	
-	      this.setState({
-	        revealed: true
-	      }, function onTileClick() {
-	        this.props.handleClick(this.props.index);
-	      });
-	    }
-	  }, {
-	    key: '_getStyles',
-	    value: function _getStyles() {
-	      var bgColor = 'gray';
-	
-	      if (this.state.revealed) {
-	        bgColor = this.props.value === 'O' ? 'rgba(0,0,200,0.1)' : 'red';
-	      }
-	
-	      return {
-	        'float': 'left',
-	        'height': '10px',
-	        'width': '10px',
-	        'margin': '2px',
-	        'padding': '5px',
-	        'backgroundColor': bgColor
-	      };
-	    }
-	  }]);
-	
-	  return Tile;
-	})(_react2['default'].Component);
-	
-	Tile.defaultProps = {
-	  value: null
-	};
-	
-	Tile.propTypes = {
-	  handleClick: _react2['default'].PropTypes.func.isRequired
-	};
-	
-	exports['default'] = Tile;
-	module.exports = exports['default'];
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(228); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Tile.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
-
-/***/ },
-/* 228 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var isReactClassish = __webpack_require__(229),
-	    isReactElementish = __webpack_require__(230);
+	var isReactClassish = __webpack_require__(231),
+	    isReactElementish = __webpack_require__(232);
 	
 	function makeExportsHot(m, React) {
 	  if (isReactElementish(m.exports, React)) {
@@ -29262,7 +29478,7 @@
 
 
 /***/ },
-/* 229 */
+/* 231 */
 /***/ function(module, exports) {
 
 	function hasRender(Class) {
@@ -29312,10 +29528,10 @@
 	module.exports = isReactClassish;
 
 /***/ },
-/* 230 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isReactClassish = __webpack_require__(229);
+	var isReactClassish = __webpack_require__(231);
 	
 	function isReactElementish(obj, React) {
 	  if (!obj) {
@@ -29329,97 +29545,1055 @@
 	module.exports = isReactElementish;
 
 /***/ },
-/* 231 */
+/* 233 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(59), RootInstanceProvider = __webpack_require__(67), ReactMount = __webpack_require__(69), React = __webpack_require__(123); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+		value: true
+	});
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var _react = __webpack_require__(123);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _storesGame = __webpack_require__(225);
+	
+	var _storesGame2 = _interopRequireDefault(_storesGame);
+	
+	var _componentsGrid = __webpack_require__(234);
+	
+	var _componentsGrid2 = _interopRequireDefault(_componentsGrid);
+	
+	var _componentsScoreboard = __webpack_require__(239);
+	
+	var _componentsScoreboard2 = _interopRequireDefault(_componentsScoreboard);
+	
+	var App = (function (_React$Component) {
+		_inherits(App, _React$Component);
+	
+		function App(props) {
+			_classCallCheck(this, App);
+	
+			_get(Object.getPrototypeOf(App.prototype), 'constructor', this).call(this, props);
+	
+			console.log(_storesGame2['default'].getState());
+			// Could easily be passed in as props from a server
+			this.state = this._getInitialState();
+	
+			this._incrementMoves = this._incrementMoves.bind(this);
+			this._decrementMarkers = this._decrementMarkers.bind(this);
+			this._onLose = this._onLose.bind(this);
+			this._onWin = this._onWin.bind(this);
+			this._resetGame = this._resetGame.bind(this);
+			this._tick = this._tick.bind(this);
+	
+			this._clock = null;
+		}
+	
+		_createClass(App, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				this._clock = setInterval(this._tick, 1000);
+			}
+		}, {
+			key: 'componentWillUnmount',
+			value: function componentWillUnmount() {
+				clearInterval(this._clock);
+			}
+		}, {
+			key: '_tick',
+			value: function _tick() {
+				if (!this.state.started || !this.state.playing) {
+					return;
+				}
+	
+				this.setState({
+					currentTime: this.state.currentTime + 1
+				});
+			}
+		}, {
+			key: '_getInitialState',
+			value: function _getInitialState() {
+				return {
+					moves: 0,
+					score: 0,
+					playing: true,
+					gameId: this._getGameId(),
+					won: false,
+					currentTime: 0,
+					markers: 99,
+					started: false
+				};
+			}
+		}, {
+			key: '_decrementMarkers',
+			value: function _decrementMarkers() {
+				if (!this.state.markers) {
+					return;
+				}
+	
+				this.setState({
+					markers: this.state.markers - 1
+				});
+			}
+		}, {
+			key: '_incrementMoves',
+			value: function _incrementMoves() {
+				this.setState({
+					moves: this.state.moves + 1,
+					started: true
+				});
+			}
+		}, {
+			key: '_onLose',
+			value: function _onLose() {
+				clearInterval(this.clock);
+				this.clock = null;
+	
+				this.setState({
+					playing: false
+				});
+			}
+		}, {
+			key: '_onWin',
+			value: function _onWin() {
+				this.setState({
+					playing: false,
+					won: true
+				});
+			}
+		}, {
+			key: '_resetGame',
+			value: function _resetGame() {
+				var nextGameState = this._getInitialState();
+				this.setState(nextGameState);
+			}
+		}, {
+			key: '_getGameId',
+			value: function _getGameId() {
+				return +new Date() + ':' + (Math.random() * 1000000 | 0); // no clue how unique this is
+			}
+		}, {
+			key: '_getGameOverMessage',
+			value: function _getGameOverMessage() {
+				if (!this.state.playing) {
+					var resetButton = _react2['default'].createElement(
+						'button',
+						{ onClick: this._resetGame },
+						'restart'
+					);
+					var message = this.state.won ? 'YOU WIN!' : 'YOU LOSE, LOSER.';
+	
+					return _react2['default'].createElement(
+						'div',
+						null,
+						_react2['default'].createElement(
+							'h1',
+							{ className: 'ms-title' },
+							message
+						)
+					);
+				}
+	
+				return _react2['default'].createElement(
+					'h1',
+					{ className: 'ms-title' },
+					'MINESWEEPER'
+				);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var time = this.state.currentTime;
+				return _react2['default'].createElement(
+					'div',
+					{ className: 'ms-game-container ms-retro-border' },
+					_react2['default'].createElement(
+						'div',
+						{ className: 'ms-info-pane' },
+						_react2['default'].createElement(_componentsScoreboard2['default'], { score: this.state.markers }),
+						this._getGameOverMessage(),
+						_react2['default'].createElement(_componentsScoreboard2['default'], { score: time })
+					),
+					_react2['default'].createElement(
+						'button',
+						{ className: 'ms-reset-btn',
+							style: { display: this.state.playing ? 'none' : 'initial' },
+							onClick: this._resetGame },
+						'restart'
+					),
+					_react2['default'].createElement(_componentsGrid2['default'], { key: this.state.gameId,
+						playing: this.state.playing,
+						onTileClick: this._incrementMoves,
+						onTileRightClick: this._decrementMarkers,
+						onLose: this._onLose,
+						onWin: this._onWin })
+				);
+			}
+		}]);
+	
+		return App;
+	})(_react2['default'].Component);
+	
+	exports['default'] = App;
+	module.exports = exports['default'];
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(230); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "App.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
+
+/***/ },
+/* 234 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(59), RootInstanceProvider = __webpack_require__(67), ReactMount = __webpack_require__(69), React = __webpack_require__(123); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var _react = __webpack_require__(123);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _componentsRow = __webpack_require__(235);
+	
+	var _componentsRow2 = _interopRequireDefault(_componentsRow);
+	
+	var _utilsFloodFill = __webpack_require__(238);
+	
+	var _utilsFloodFill2 = _interopRequireDefault(_utilsFloodFill);
+	
+	var _points = [];
+	
+	var Grid = (function (_React$Component) {
+	  _inherits(Grid, _React$Component);
+	
+	  function Grid(props) {
+	    _classCallCheck(this, Grid);
+	
+	    _get(Object.getPrototypeOf(Grid.prototype), 'constructor', this).call(this, props);
+	
+	    this._checkNeighbors = this._checkNeighbors.bind(this);
+	    this._placeMarker = this._placeMarker.bind(this);
+	
+	    // generate the board object.
+	    var board = this._getBoard();
+	    var mines = this._getMines();
+	
+	    // perform a second pass over the board and place bombs
+	    this._placeMines(board, mines);
+	
+	    this.state = {
+	      board: board
+	    };
+	  }
+	
+	  /**
+	   * Creates grid from the row and column props.
+	   * @returns {Array} board
+	  **/
+	
+	  _createClass(Grid, [{
+	    key: '_getBoard',
+	    value: function _getBoard() {
+	      var columns = this.props.columns;
+	      var rows = this.props.rows;
+	
+	      var row = -1;
+	      var column = -1;
+	      var board = [];
+	
+	      while ((row = row + 1) < rows) {
+	        board[row] = [];
+	
+	        while ((column = column + 1) < columns) {
+	          board[row][column] = {
+	            value: null,
+	            revealed: false,
+	            flagged: false
+	          };
+	        }
+	
+	        // reset the column counter
+	        column = -1;
+	      }
+	
+	      return board;
+	    }
+	  }, {
+	    key: '_getRows',
+	    value: function _getRows() {
+	      var _this = this;
+	
+	      var row = 0;
+	      var output = [];
+	
+	      for (row; row < this.props.rows; row++) {
+	        var ref = 'Row' + row;
+	
+	        output.push(_react2['default'].createElement(_componentsRow2['default'], { key: row,
+	          data: _this.state.board[row],
+	          ref: ref,
+	          index: row,
+	          onTileClick: _this._checkNeighbors,
+	          onRightClick: this._placeMarker }));
+	      }
+	
+	      return output;
+	    }
+	  }, {
+	    key: '_getContainerStyle',
+	    value: function _getContainerStyle() {
+	      var width = this.props.columns * (this.props.tileSize + this.props.gutter) + 'px';
+	
+	      var height = '' + this.props.rows * (this.props.tileSize + this.props.gutter);
+	
+	      return {
+	        'height': height,
+	        'width': width
+	      };
+	    }
+	  }, {
+	    key: '_checkNeighbors',
+	    value: function _checkNeighbors(row, column) {
+	      if (!this.props.playing) {
+	        return;
+	      }
+	
+	      this.props.onTileClick();
+	
+	      if (this.state.board[row][column].value === 'X') {
+	        var _newBoard = this.state.board.slice();
+	
+	        // User has clicked on a mine, reveal it and end the game.
+	        _newBoard.forEach(function (row) {
+	          row.forEach(function (tile) {
+	            if (tile.value === 'X') {
+	              tile.revealed = true;
+	            }
+	          });
+	        });
+	
+	        var newState = { board: _newBoard };
+	        return this.setState(newState, function () {
+	          this.props.onLose();
+	        });
+	      }
+	
+	      // create a copy of the board so we can mutate it freely
+	      var newBoard = this.state.board.slice();
+	
+	      // call the flood fill algorithm
+	      (0, _utilsFloodFill2['default'])(newBoard, row, column);
+	
+	      this.setState({
+	        board: newBoard
+	      }, function () {
+	        // check if the player has won
+	        var revealedTiles = this.state.board.reduce(function (memo, row) {
+	          memo = memo.concat(row.filter(function (tile) {
+	            return !tile.revealed;
+	          }));
+	          return memo;
+	        }, []);
+	
+	        if (revealedTiles.length === this.props.numMines) {
+	          return this.props.onWin();
+	        }
+	      });
+	    }
+	  }, {
+	    key: '_getMines',
+	    value: function _getMines() {
+	      var numMines = this.props.numMines;
+	      var point = null;
+	      var spaces = {};
+	
+	      while (numMines--) {
+	        // _getRandomSpace returns null. As long as `point` is null we know
+	        // a unique random tile hasn't been found.
+	        while (point === null) {
+	          point = this._getRandomSpace();
+	        }
+	
+	        var coords = this._getCoordsFromPoint(point);
+	
+	        // If we have seen this row, assign it our variable,
+	        // otherwise initialize it with an empty array.
+	        var row = spaces[coords.y] = spaces[coords.y] || [];
+	
+	        // Add the new mine tile to its row.
+	        row.push(coords.x);
+	
+	        // zero out point so while loop generates a new random point.
+	        point = null;
+	      }
+	
+	      // zero out the points array
+	      _points.length = 0;
+	
+	      return spaces;
+	    }
+	
+	    /**
+	     * Get a point in the grid using a pseudorandom number. If the algorithm
+	     * has grabbed this point before, return null, otherwise, return the position
+	     * of the tile in the grid as an index of a 1d array.
+	     * @return {Number|null} Null or the 1d index of the point in the grid.
+	     */
+	  }, {
+	    key: '_getRandomSpace',
+	    value: function _getRandomSpace() {
+	      // Add one to make our random number generator inclusive.
+	      var gridSize = this.props.rows * this.props.columns;
+	      var randomPoint = Math.random() * gridSize | 0;
+	
+	      if (~_points.indexOf(randomPoint)) {
+	        // This point in the grid has already been assigned a value.
+	        return null;
+	      }
+	
+	      // Add the point to our list of used points.
+	      _points.push(randomPoint);
+	
+	      return randomPoint;
+	    }
+	
+	    /**
+	     * Translate a 1d position in a grid to an x,y position.
+	     * @param  {Number}} point index in a 1d representation of the grid
+	     * @return {Object}        X/Y coordinate pair.
+	     */
+	  }, {
+	    key: '_getCoordsFromPoint',
+	    value: function _getCoordsFromPoint(point) {
+	      var columns = this.props.columns;
+	      var coords = {};
+	
+	      coords.x = point % columns;
+	      coords.y = point / columns | 0;
+	
+	      return coords;
+	    }
+	  }, {
+	    key: '_placeMines',
+	    value: function _placeMines(board, mines) {
+	      Object.keys(mines).forEach(function (row) {
+	        mines[row].forEach(function (tile) {
+	          board[row][tile].value = 'X';
+	        });
+	      });
+	    }
+	  }, {
+	    key: '_placeMarker',
+	    value: function _placeMarker(column, row, event) {
+	      event.preventDefault();
+	
+	      this.props.onTileRightClick();
+	
+	      var board = this.state.board;
+	      board[column][row].flagged = true;
+	
+	      this.setState({
+	        board: board
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'ms-game-board ms-retro-border-rev',
+	          style: this._getContainerStyle() },
+	        this._getRows()
+	      );
+	    }
+	  }]);
+	
+	  return Grid;
+	})(_react2['default'].Component);
+	
+	Grid.propTypes = {
+	  rows: _react2['default'].PropTypes.number,
+	  columns: _react2['default'].PropTypes.number,
+	  onTileClick: _react2['default'].PropTypes.func,
+	  onTileRightClick: _react2['default'].PropTypes.func
+	};
+	
+	Grid.defaultProps = {
+	  rows: 16,
+	  columns: 30,
+	  tileSize: 20,
+	  gutter: 4,
+	  // TODO instead of doing this, make the grid more generic and have the
+	  // minesweeper board inherit from this component.
+	  numMines: 70
+	};
+	
+	exports['default'] = Grid;
+	module.exports = exports['default'];
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(230); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Grid.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
+
+/***/ },
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(59), RootInstanceProvider = __webpack_require__(67), ReactMount = __webpack_require__(69), React = __webpack_require__(123); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var _react = __webpack_require__(123);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Tile = __webpack_require__(236);
+	
+	var _Tile2 = _interopRequireDefault(_Tile);
+	
+	var Row = (function (_React$Component) {
+	  _inherits(Row, _React$Component);
+	
+	  function Row(props) {
+	    _classCallCheck(this, Row);
+	
+	    _get(Object.getPrototypeOf(Row.prototype), 'constructor', this).call(this, props);
+	    this._onTileClick = this._onTileClick.bind(this);
+	  }
+	
+	  _createClass(Row, [{
+	    key: '_onTileClick',
+	    value: function _onTileClick(tileIndex) {
+	      this.props.onTileClick(this.props.index, tileIndex);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var output = [];
+	      var index = 0;
+	
+	      for (index; index < 30; index++) {
+	        var tileData = this.props.data[index];
+	
+	        output.push(_react2['default'].createElement(_Tile2['default'], { key: index,
+	          index: index,
+	          handleClick: this._onTileClick,
+	          handleRightClick: this.props.onRightClick.bind(null, this.props.index),
+	          value: tileData.value,
+	          revealed: tileData.revealed,
+	          mineCount: tileData.mineCount,
+	          flagged: tileData.flagged }));
+	      }
+	
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'grid-row' },
+	        output
+	      );
+	    }
+	  }]);
+	
+	  return Row;
+	})(_react2['default'].Component);
+	
+	Row.propTypes = {
+	  // callback function to be passed down to each tile.
+	  onTileClick: _react2['default'].PropTypes.func.isRequired
+	};
+	
+	exports['default'] = Row;
+	module.exports = exports['default'];
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(230); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Row.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(59), RootInstanceProvider = __webpack_require__(67), ReactMount = __webpack_require__(69), React = __webpack_require__(123); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var _react = __webpack_require__(123);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _componentsMineCount = __webpack_require__(237);
+	
+	var _componentsMineCount2 = _interopRequireDefault(_componentsMineCount);
+	
+	var Tile = (function (_React$Component) {
+	  _inherits(Tile, _React$Component);
+	
+	  function Tile(props) {
+	    _classCallCheck(this, Tile);
+	
+	    _get(Object.getPrototypeOf(Tile.prototype), 'constructor', this).call(this, props);
+	    this._handleClick = this._handleClick.bind(this);
+	  }
+	
+	  _createClass(Tile, [{
+	    key: 'shouldComponentUpdate',
+	    value: function shouldComponentUpdate(newProps, newState) {
+	      if (newProps.value !== this.props.value || newProps.revealed !== this.props.revealed || newProps.flagged !== this.props.flagged) {
+	        return true;
+	      }
+	
+	      return false;
+	    }
+	  }, {
+	    key: '_wasMine',
+	    value: function _wasMine() {
+	      return this.props.value === 'X' && this.props.revealed && this.props.flagged ? 'X' : '';
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { style: this._getBackgroundColor(),
+	          onClick: this._handleClick,
+	          onContextMenu: this.props.handleRightClick.bind(null, this.props.index),
+	          className: 'tile' },
+	        _react2['default'].createElement(_componentsMineCount2['default'], { count: this.props.mineCount }),
+	        _react2['default'].createElement(
+	          'p',
+	          { style: { color: 'white' } },
+	          this._wasMine()
+	        )
+	      );
+	    }
+	
+	    // Wrap the passed down function. Stop execution if already revealed.
+	  }, {
+	    key: '_handleClick',
+	    value: function _handleClick() {
+	      if (this.props.revealed || this.props.flagged) {
+	        return;
+	      }
+	
+	      this.props.handleClick(this.props.index);
+	    }
+	  }, {
+	    key: '_getBackgroundColor',
+	    value: function _getBackgroundColor() {
+	      var bgColor = 'gray';
+	
+	      if (this.props.revealed) {
+	        bgColor = this.props.value === 'O' ? 'rgba(0,0,200,0.1)' : '#F00078';
+	      } else if (this.props.flagged) {
+	        bgColor = '#F0F000';
+	      }
+	
+	      return {
+	        'backgroundColor': bgColor
+	      };
+	    }
+	  }]);
+	
+	  return Tile;
+	})(_react2['default'].Component);
+	
+	Tile.defaultProps = {
+	  // `value` represents whether or not a mine has been revealed. Used to
+	  // determine the color of the tile.
+	  value: null,
+	  revealed: false,
+	  flagged: false
+	};
+	
+	Tile.propTypes = {
+	  handleClick: _react2['default'].PropTypes.func.isRequired,
+	  handleRightClick: _react2['default'].PropTypes.func.isRequired,
+	  value: _react2['default'].PropTypes.string,
+	  revealed: _react2['default'].PropTypes.bool.isRequired,
+	  flagged: _react2['default'].PropTypes.bool.isRequired
+	};
+	
+	exports['default'] = Tile;
+	module.exports = exports['default'];
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(230); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Tile.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(59), RootInstanceProvider = __webpack_require__(67), ReactMount = __webpack_require__(69), React = __webpack_require__(123); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var _react = __webpack_require__(123);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var MineCount = (function (_React$Component) {
+	  _inherits(MineCount, _React$Component);
+	
+	  function MineCount(props) {
+	    _classCallCheck(this, MineCount);
+	
+	    _get(Object.getPrototypeOf(MineCount.prototype), 'constructor', this).call(this, props);
+	  }
+	
+	  _createClass(MineCount, [{
+	    key: '_getStyle',
+	    value: function _getStyle() {
+	      if (!this.props.count) {
+	        return {};
+	      }
+	
+	      return {
+	        color: this.props.count === 1 ? '#8EBDFF' : this.props.count === 2 ? '#C0D818' : '#F00078'
+	      };
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'p',
+	        { style: this._getStyle() },
+	        this.props.count
+	      );
+	    }
+	  }]);
+	
+	  return MineCount;
+	})(_react2['default'].Component);
+	
+	MineCount.propTypes = {
+	  count: _react2['default'].PropTypes.number
+	};
+	
+	exports['default'] = MineCount;
+	module.exports = exports['default'];
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(230); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "MineCount.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
+
+/***/ },
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(59), RootInstanceProvider = __webpack_require__(67), ReactMount = __webpack_require__(69), React = __webpack_require__(123); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 	
 	/**
-	  var node = {};
-	  - node.mineCount -> starts at zero.
-	  - when algorithm reaches a mine, this gets incremented and
-	  the recursive search on that 'path' ends. Each node still needs to
-	  wait for all its other paths to report back.
-	
-	// stack based recursive
-	
-	// in this case, we need a way to determine if the space has been checked
-	Flood-fill (node, target-color, replacement-color):
-	1. If target-color is equal to replacement-color, return.
-	2. If the color of node is not equal to target-color, return.
-	3. Set the color of node to replacement-color.
-	4. Perform Flood-fill (one step to the west of node, target-color, replacement-color).
-	  Perform Flood-fill (one step to the east of node, target-color, replacement-color).
-	  Perform Flood-fill (one step to the north of node, target-color, replacement-color).
-	  Perform Flood-fill (one step to the south of node, target-color, replacement-color).
-	5. Return.
-	
-	
+	for every position on board:
+	  1). check each of the 8 neighbors.
+	  2). if any of those neighbors is a mine, stop; dont reveal any surrounding nodes.
+	  3). for each negighbor that is a mine, increment mine count by 1
+	  4). otherwise, keep checking tiles.
 	**/
 	'use strict';
 	
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
-	var FloodFill = function FloodFill(grid) {
-	  var _floodFill = function _floodFill(board, x, y) {
-	    var checked = [];
-	    var pending = [];
+	var FloodFill = function FloodFill(grid, x, y) {
+	  var checked = [];
 	
-	    // is the current tile marked as a mine?
-	    var isMine = function isMine(nodeValue) {
-	      return node === 'X';
-	    };
-	
-	    // determine if a given node has already been looked at on this pass
-	    // through the algorithm.
-	    var tileIsChecked = function tileIsChecked(node) {
-	      var length = checked.length;
-	
-	      if (!!length) {
-	        return;
-	      }
-	
-	      var iterator = 0;
-	
-	      for (iterator; iterator < length; iterator++) {
-	        var thisNode = checked[iterator];
-	
-	        if (node.x === thisNode.x && node.y === thisNode.y) {
-	          return true;
-	        }
-	      }
-	
-	      return false;
-	    };
-	
-	    var addNode = function addNode(x, y) {
-	      var node = {};
-	
-	      node.x = x;
-	      node.y = y;
-	
-	      return node;
-	    };
-	
-	    var addNeighbors = function addNeighbors(x, y) {
-	      var node = addNode(x, y);
-	
-	      if (!tileIsChecked(node)) {
-	        checked.push(node);
-	      }
-	
-	      pending.concat([addNode(x, y - 1), addNode(x, y + 1), addNode(x + 1, y), addNode(x - 1, y), addNode(x - 1, y - 1), addNode(x - 1, y + 1), addNode(x + 1, y - 1), addNode(x + 1, y + 1)]);
-	    };
+	  // is the current tile marked as a mine?
+	  var isMine = function isMine(nodeValue) {
+	    return nodeValue === 'X';
 	  };
 	
-	  var _getNeighborFrom = function _getNeighborFrom(start, x, y) {};
+	  // determine if a given node has already been looked at on this pass
+	  // through the algorithm.
+	  var nodeIsChecked = function nodeIsChecked(node) {
+	    var length = checked.length;
+	
+	    if (!length) {
+	      return;
+	    }
+	
+	    var iterator = 0;
+	
+	    for (iterator; iterator < length; iterator++) {
+	      var thisNode = checked[iterator];
+	
+	      if (node.x === thisNode.x && node.y === thisNode.y) {
+	        return true;
+	      }
+	    }
+	
+	    return false;
+	  };
+	
+	  var Node = function Node(x, y) {
+	    this.x = x;
+	    this.y = y;
+	  };
+	
+	  var inBounds = function inBounds(x, y) {
+	    if (x > grid.length - 1 || y > grid[0].length - 1 || x < 0 || y < 0) {
+	      return false;
+	    }
+	
+	    return true;
+	  };
+	
+	  var addNeighbors = function addNeighbors(x, y) {
+	    var neighbors = [];
+	
+	    if (!inBounds(x, y)) {
+	      // We are trying to access a node that is out of the bounds of the grid
+	      return;
+	    }
+	
+	    var thisNode = grid[x][y];
+	
+	    // What state the current node is in. e.g. mine, safe square, or unchecked
+	    var valueAtPoint = thisNode.value;
+	
+	    if (isMine(valueAtPoint)) {
+	      // We've hit a mine, reveal it and stop the algorithm on this node's path
+	      thisNode.revealed = true;
+	      return;
+	    }
+	
+	    if (valueAtPoint === 'O') {
+	      // This spot is safe and has been revealed, end this node's path
+	      return;
+	    }
+	
+	    // Create a new minesweeper object
+	    var node = new Node(x, y);
+	
+	    if (!nodeIsChecked(node)) {
+	      // Mark this tile as checked so we dont examine it in the future.
+	      checked.push(node);
+	    }
+	
+	    neighbors = neighbors.concat([new Node(x, y - 1), // north
+	    new Node(x, y + 1), // south
+	    new Node(x + 1, y), // east
+	    new Node(x - 1, y), // west
+	    new Node(x - 1, y - 1), new Node(x - 1, y + 1), new Node(x + 1, y - 1), new Node(x + 1, y + 1)].filter(function (item) {
+	      return inBounds(item.x, item.y);
+	    }));
+	
+	    // If the current node being examined has been marked, we can reveal keep
+	    // checking its node path. However, we shouldn't toggle it to revealed,
+	    // and we shouldn't let the player know how many mines are around it.
+	    if (!thisNode.flagged) {
+	      // the current minesweeper hasn't found a mine, reveal it and mark as safe.
+	      thisNode.value = 'O';
+	      thisNode.revealed = true;
+	    }
+	
+	    // Next, check to see of any of the 8 neighboring nodes are mines.
+	    var hasMines = neighbors.filter(function (neighbor) {
+	      return isMine(grid[neighbor.x][neighbor.y].value);
+	    });
+	
+	    if (hasMines.length) {
+	      // The current node has mines for neighbors. Store the number and end
+	      // the algorithm on this node path.
+	      if (!thisNode.flagged) {
+	        thisNode.mineCount = hasMines.length;
+	      }
+	
+	      return;
+	    }
+	
+	    var nextNode = undefined;
+	
+	    // Call addNeighbors on each of the 8 neighbors to see how many more
+	    // spaces we can reveal.
+	    while (nextNode = neighbors.pop()) {
+	      addNeighbors(nextNode.x, nextNode.y);
+	    }
+	  };
+	
+	  addNeighbors(x, y);
 	};
 	
 	exports['default'] = FloodFill;
 	module.exports = exports['default'];
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(228); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "FloodFill.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(230); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "FloodFill.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(59), RootInstanceProvider = __webpack_require__(67), ReactMount = __webpack_require__(69), React = __webpack_require__(123); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var _react = __webpack_require__(123);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var Scoreboard = (function (_React$Component) {
+	  _inherits(Scoreboard, _React$Component);
+	
+	  function Scoreboard(props) {
+	    _classCallCheck(this, Scoreboard);
+	
+	    _get(Object.getPrototypeOf(Scoreboard.prototype), 'constructor', this).call(this, props);
+	
+	    var digits = this._padLeft(props.score).split('');
+	
+	    this.state = {
+	      hundreds: digits[0],
+	      tens: digits[1],
+	      ones: digits[2]
+	    };
+	  }
+	
+	  _createClass(Scoreboard, [{
+	    key: '_padLeft',
+	    value: function _padLeft(score) {
+	      var output = undefined;
+	
+	      if (score < 10) {
+	        output = '00' + score;
+	      } else if (score >= 10 && score < 100) {
+	        output = '0' + score;
+	      } else {
+	        output = '' + score;
+	      }
+	
+	      return output;
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      var digits = this._padLeft(nextProps.score).split('');
+	
+	      this.setState({
+	        hundreds: digits[0],
+	        tens: digits[1],
+	        ones: digits[2]
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'ms-retro-box ms-retro-border' },
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'ms-retro-content' },
+	          _react2['default'].createElement(
+	            'span',
+	            { className: 'ms-tech-display-glyph' },
+	            this.state.hundreds
+	          ),
+	          _react2['default'].createElement(
+	            'span',
+	            { className: 'ms-tech-display-glyph' },
+	            this.state.tens
+	          ),
+	          _react2['default'].createElement(
+	            'span',
+	            { className: 'ms-tech-display-glyph' },
+	            this.state.ones
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Scoreboard;
+	})(_react2['default'].Component);
+	
+	Scoreboard.propTypes = {
+	  score: _react2['default'].PropTypes.number
+	};
+	
+	exports['default'] = Scoreboard;
+	module.exports = exports['default'];
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(230); if (makeExportsHot(module, __webpack_require__(123))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Scoreboard.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
 
 /***/ }
