@@ -7,7 +7,6 @@ export default class App extends React.Component {
 	constructor(props) {
     super(props);
 
-		console.log(Game.getState());
 		// Could easily be passed in as props from a server
 		this.state = this._getInitialState();
 
@@ -21,12 +20,8 @@ export default class App extends React.Component {
 		this._clock = null;
 	}
 
-	componentDidMount() {
-		this._clock = setInterval(this._tick, 1000);
-	}
-
 	componentWillUnmount() {
-		clearInterval(this._clock);
+		this._untick();
 	}
 
 	_tick() {
@@ -37,6 +32,11 @@ export default class App extends React.Component {
 		this.setState({
 			currentTime: this.state.currentTime + 1
 		});
+	}
+
+	_untick() {
+		clearInterval(this._clock);
+		this._clock = null;
 	}
 
 	_getInitialState() {
@@ -63,6 +63,10 @@ export default class App extends React.Component {
 	}
 
   _incrementMoves() {
+		if (!this.state.moves) {
+			this._clock = setInterval(this._tick, 1000);
+		}
+
     this.setState({
       moves: this.state.moves + 1,
 			started: true
@@ -70,8 +74,7 @@ export default class App extends React.Component {
   }
 
   _onLose() {
-		clearInterval(this.clock);
-		this.clock = null;
+		this._untick();
 
     this.setState({
       playing: false

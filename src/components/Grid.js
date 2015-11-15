@@ -12,7 +12,7 @@ class Grid extends React.Component {
     this._placeMarker = this._placeMarker.bind(this);
 
     // generate the board object.
-    let board = this._getBoard();
+    const [ board, map ] = this._getBoard();
     const mines = this._getMines();
 
     // perform a second pass over the board and place bombs
@@ -33,24 +33,30 @@ class Grid extends React.Component {
 
     let row = -1;
     let column = -1;
+    let mapPos = -1;
     let board = [];
+    const map = {};
 
     while((row = row + 1) < rows) {
       board[row] = [];
 
       while((column = column + 1) < columns) {
-        board[row][column] = {
+        let node = {
           value: null,
           revealed: false,
           flagged: false
         };
+
+        board[row][column] = node;
+        map[++mapPos] = node;
+        node = null;
       }
 
       // reset the column counter
       column = -1;
     }
 
-    return board;
+    return [board, map];
   }
 
   _getRows() {

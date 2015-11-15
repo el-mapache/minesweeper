@@ -5,7 +5,7 @@ export default class MinesweeperBoard {
     this.rows = rows;
     this.columns = columns;
     this.mines = mines;
-    this.size = (this.rows * this.columns) + 1;
+    this.size = (this.rows * this.columns);
 
     let board = this._getBoard();
     this._placeMines(board, this._getMines());
